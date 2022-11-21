@@ -1,0 +1,9 @@
+<h1>Créez votre annonce</h1>
+
+<%= simple_form_for[@car, @user] do |f| %>
+  <%= f.input :brand, label: 'marque de la voiture' %>
+  <%= f.input :password, hint: 'No special characters.' %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :remember_me, inline_label: 'Yes, remember me' %>
+  <%= f.button :submit %>
+<% end %>
