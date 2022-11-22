@@ -1,5 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% provide(:title, "Home") %>
 
+<body>
+  <div class="background">
+    <div class="container">
+      <div class="center_content">
+        <h1>BIENVENUE CHEZ FAT CARS COLLECTION</h1>
 
-<%= link_to "Voir toutes les annonces", cars_path %>
+        <h2>Loue ta voiture de rêve ici.</h2>
+
+        <%= link_to "CLICK", cars_path, class: "btn" %>
+      </div>
+    </div>
+  </div>
+</body>
