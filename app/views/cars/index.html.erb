@@ -1,5 +1,18 @@
 <h1>Voici toutes les offres</h1>
 
-<% @cars.each do |car| %>
-  <%= link_to car.brand, car_path(car) %>
-<% end %>
+<div class="main-container">
+  <div class="cards">
+    <% @cars.each do |car| %>
+      <div class="card-trip">
+        <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= car.brand %></h2>
+            <p><%= car.description %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= car.price_per_day %> €/jour</h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
