@@ -1,0 +1,8 @@
+<h1>Voici l'offre</h1>
+
+<%= @car.brand %>
+
+<%= simple_form_for ([@car, @booking]) do |f| %>
+  <%= f.input :date, placeholder: "mettre la date" %>
+  <%= f.button :submit, "Book", class: "btn btn-primary" %>
+  <% end %>

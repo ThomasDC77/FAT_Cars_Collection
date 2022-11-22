@@ -1,10 +1,11 @@
 class CarsController < ApplicationController
+  before_action :set_car, only: %i[show]
   def index
     @cars = Car.all
   end
 
   def show
-    @car = Car.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -13,9 +14,9 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    @car.user = @user
+    @car.user = current_user
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to cars_path(@car)
     else
       render :new
     end
@@ -24,6 +25,10 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :year, :price_per_day, :color, :convertible, :number_street, :name_street, :post_code, :seat_numbers, :description, :city)
+    params.require(:car).permit(:brand, :year, :price_per_day, :color, :number_street, :name_street, :post_code, :description, :city)
+  end
+
+  def set_car
+    @car = Car.find(params[:id])
   end
 end
