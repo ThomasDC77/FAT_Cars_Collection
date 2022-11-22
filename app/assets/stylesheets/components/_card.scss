@@ -1,5 +1,12 @@
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .main-container {
   flex-wrap: wrap;
+  margin: 80px;
 }
 
 .cards {
@@ -14,12 +21,24 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: black;
+  transition: transform .1s;
   img {
     height: 200px;
     width: 100%;
     object-fit: cover;
   }
 }
+
+
+.card-trip:hover {
+  box-shadow: 0 0px 40px rgba(0, 0, 0, 0.8);
+  // -ms-transform: scale(1.1);
+  // -webkit-transform: scale(1.1);
+  // transform: scale(1.1);
+}
+
 
 .card-trip h2 {
   font-size: 16px;
