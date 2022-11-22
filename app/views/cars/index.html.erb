@@ -1,5 +1,5 @@
 <h1>Voici toutes les offres</h1>
 
 <% @cars.each do |car| %>
-  <%= link_to car.name %>
+  <%= link_to car.brand, car_path(car) %>
 <% end %>

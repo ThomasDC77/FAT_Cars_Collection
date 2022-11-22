@@ -1,0 +1,14 @@
+<h1>Créez votre annonce</h1>
+
+<%= simple_form_for(@car) do |f| %>
+  <%= f.input :brand, placeholder: 'marque de la voiture' %>
+  <%= f.input :year, placeholder: "l'année du véhicule" %>
+  <%= f.input :price_per_day, placeholder: 'prix par jour' %>
+  <%= f.input :color, placeholder: 'couleur' %>
+  <%= f.input :description, placeholder: 'déscription' %>
+  <%= f.input :number_street, placeholder: 'numéro de rue' %>
+  <%= f.input :name_street, placeholder: 'nom de rue' %>
+  <%= f.input :post_code, placeholder: 'code postal' %>
+  <%= f.input :city, placeholder: 'ville' %>
+  <%= f.button :submit %>
+<% end %>
