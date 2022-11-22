@@ -1,0 +1,68 @@
+<div class="text-center padded">
+  <h2>All my cars</h2>
+</div>
+<div class="text-center">
+  <h4 id="red-word">My future cars</h4>
+</div>
+
+<div class="wrapper-dashboard">
+  <ul class="list-unstyled">
+    <% @bookings.each do |booking| %>
+      <% if booking.checking_on > Date.today %>
+        <% if booking.status == "Pending host validation" %>
+        <li class="dashboard">
+        <%= cl_image_tag(booking.car.photo.path, width: 400, height: 300, crop: :fill, class: "pdt-image hidden-xs" ) %>
+          <div class='product-body'>
+            <h2><%= booking.car.title %></h2>
+            <p>Date: <strong><%= booking.car.date %></strong></p>
+            <p>carId: <strong><%= booking.car.carId %></strong></p>
+            <p>userId: <strong><%= booking.car.userId %></strong></p>
+          </div>
+          <div>
+            <ul class="list-unstyled hidden-sm hidden-xs padded">
+              <li><strong>Wait for your host to confirm. Stay tuned !</strong></li>
+              <li class="text-right"><%= link_to "Delete this booking", booking_path(booking), method: :delete, class:"btn btn-default", data: {confirm: "Are you sure"} %></li>
+            </ul>
+          </div>
+         </li>
+        <% end %>
+
+      <% if booking.status == "Confirmed" %>
+      <li class="dashboard">
+      <%= cl_image_tag(booking.car.photo.path, width: 400, height: 300, crop: :fill, class: "pdt-image hidden-xs" ) %>
+      <div class='product-body'>
+        <h2><%= booking.car.title %></h2>
+        <p>Date: <strong><%= booking.car.date %></strong></p>
+        <p>carId: <strong><%= booking.car.carId %></strong></p>
+        <p>userId: <strong><%= booking.car.userId %></strong></p>
+      </div>
+      <div>
+        <ul class="list-unstyled hidden-sm hidden-xs padded">
+          <li><strong>Your booking is confirmed !</strong></li>
+          <li class="text-right"><%= link_to "Delete this booking", booking_path(booking), method: :delete, class:"btn btn-default", data: {confirm: "Are you sure"} %> </li>
+        </ul>
+      </div>
+      </li>
+      <% end %>
+
+      <% if booking.status == "Canceled" %>
+      <li class="dashboard">
+      <%= cl_image_tag(booking.car.photo.path, width: 400, height: 300, crop: :fill, class: "pdt-image hidden-xs" ) %>
+      <div class='product-body'>
+        <h2><%= booking.car.title %></h2>
+        <p>Date: <strong><%= booking.car.date %></strong></p>
+        <p>carId: <strong><%= booking.car.carId %></strong></p>
+        <p>userId: <strong><%= booking.userId %></strong></p>
+      </div>
+      <div>
+        <ul class="list-unstyled hidden-sm hidden-xs padded">
+          <li><p><%= booking.car.user.first_name%> canceled your booking </p></li>
+        </ul>
+      </div>
+      </li>
+      <% end %>
+      <% end %>
+
+    <% end %>
+  </ul>
+</div>

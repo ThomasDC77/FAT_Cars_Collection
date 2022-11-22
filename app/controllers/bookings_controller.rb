@@ -5,15 +5,12 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     @booking.status = "Pending host validation"
-    if @booking.checkout_on && @booking.checkin_on
-      @booking.value = (@booking.checkout_on - @booking.checkin_on).to_f * @booking.car.price.to_f
-    else
-      @booking.value = 0
-    end
     if @booking.save
-      redirect_to booking_path(@booking)
-    else
+      # redirect_to booking_path(@booking)
       redirect_to car_path(@car)
+    else
+      # redirect_to car_path(@car)
+      render "cars/show"
     end
   end
 
