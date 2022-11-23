@@ -9,7 +9,15 @@
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="affiche-email">
+        <% if  user_signed_in?%>
+          <%= current_user.email %>
+        <% end %>
+      </div>
+
+
       <ul class="navbar-nav me-auto">
+            <%= link_to "Les offres", cars_path, class: 'nav-link' %>
           <li class="nav-item active">
             <%= link_to "Créer une annonce", new_car_path, class: 'nav-link' %>
           </li>
@@ -24,8 +32,7 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <%= link_to "Vos réservations", profile_path, class: 'dropdown-item'%>
               <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'dropdown-item' %>
             </div>
           </li>
