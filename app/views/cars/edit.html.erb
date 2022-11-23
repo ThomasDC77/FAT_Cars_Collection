@@ -1,0 +1,17 @@
+<%= @car.brand %>
+
+<%= simple_form_for(@car) do |f| %>
+  <%= f.text_field :brand, placeholder: 'marque de la voiture' %>
+  <%= f.text_field :year, placeholder: "l'année du véhicule" %>
+  <%= f.text_field :price_per_day, placeholder: 'prix par jour' %>
+  <%= f.text_field :color, placeholder: 'couleur' %>
+  <%= f.text_field :description, placeholder: 'déscription' %>
+  <%= f.text_field :number_street, placeholder: 'numéro de rue' %>
+  <%= f.text_field :name_street, placeholder: 'nom de rue' %>
+  <%= f.text_field :post_code, placeholder: 'code postal' %>
+  <%= f.text_field :city, placeholder: 'ville' %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "supprimer", car_path(@car),
+data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"} %>

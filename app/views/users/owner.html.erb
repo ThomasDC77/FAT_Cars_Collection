@@ -1,8 +1,11 @@
-<h1>Voici toutes les offres</h1>
+
+
+
+<h1>Voici tes voitures</h1>
 <div class="main-container">
   <div class="cards">
-    <% @cars.each do |car| %>
-      <%= link_to car_path(car), class: 'card-trip' do %>
+    <% current_user.cars.each do |car| %>
+      <%= link_to edit_car_path(car), class: 'card-trip' do %>
         <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-trip-infos">
           <div>
@@ -15,5 +18,3 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to "aller sur vos résa", profile_path %>
