@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path do %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class="nav-link wagon-logo" />
+      <%= image_tag "log", class: 'nav-link wagon-logo' %>
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,10 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <%= link_to "créer un annonce", new_car_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <%= link_to "Créer une annonce", new_car_path, class: 'nav-link' %>
           </li>
           <% if !user_signed_in? %>
             <li class="nav-item">
