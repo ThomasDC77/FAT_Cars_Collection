@@ -1,20 +1,26 @@
+<div class="containerProfile">
 
+  <div class="profile-button">
+    <h1>Bienvenue <%= current_user.first_name %> <%= current_user.last_name %></h1>
+    <h2><%= link_to "mes réservations", profile_path %></h2>
+  </div>
 
+  <h2>Mes voitures :</h2>
 
-<h1>Voici tes voitures</h1>
-<div class="main-container">
-  <div class="cards">
-    <% current_user.cars.each do |car| %>
-      <%= link_to edit_car_path(car), class: 'card-trip' do %>
-        <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= car.brand %></h2>
-            <p><%= car.description %></p>
+  <div class="main-container">
+    <div class="cards">
+      <% current_user.cars.each do |car| %>
+        <%= link_to edit_car_path(car), class: 'card-trip' do %>
+          <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= car.brand %></h2>
+              <p><%= car.description %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= car.price_per_day %> €/jour</h2>
           </div>
-          <h2 class="card-trip-pricing"><%= car.price_per_day %> €/jour</h2>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
