@@ -1,0 +1,23 @@
+<h1>Profile</h1>
+
+ <p>connecté en tant que <%= current_user.email %></p>
+
+<h2>Mes réservervations</h2>
+<% current_user.bookings.each do |booking| %>
+  <div>
+    <%= booking %>
+    marque: <%= booking.car.brand %>
+
+  </div>
+<% end %>
+
+
+<h2> Mes voitures (dont je suis proprio)</h2>
+<%= link_to "mes voitues", profile_owner_path %>
+
+<% current_user.cars.each do |car| %>
+  <div>
+    <%= car %>
+    <%= link_to "edit", edit_car_path(car) %>
+  </div>
+<% end %>
