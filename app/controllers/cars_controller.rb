@@ -34,10 +34,11 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    if @car.destroy
-      redirect_to profile_owner_path(@car)
+    if @car.bookings.present?
+      redirect_to car_path, status: :unprocessable_entity
     else
-      render 'profile/owner', status: :unprocessable_entity
+      @car.destroy
+      redirect_to profile_owner_path(@car)
     end
   end
 
