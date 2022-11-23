@@ -1,0 +1,23 @@
+.card-show {
+  display: flex;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: black;
+  transition: transform .1s;
+  justify-content: flex-start;
+  img {
+    height: 30%;
+    width: 30%;
+    box-shadow: 0 0 16px black;
+  }
+}
+
+.card-show-infos {
+  margin: 32px;
+}
+
+.book-button {
+  float: right;
+}

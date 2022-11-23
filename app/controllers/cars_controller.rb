@@ -3,6 +3,8 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[show edit update destroy]
   def index
     @cars = Car.all
+    @q = Car.ransack(params[:q])
+    @cars = @q.result(distinct: true)
   end
 
   def show
@@ -32,8 +34,11 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    @car.destroy
-    redirect_to profile_owner_path(@car)
+    if @car.destroy
+      redirect_to profile_owner_path(@car)
+    else
+      render 'profile/owner', status: :unprocessable_entity
+    end
   end
 
   private

@@ -51,6 +51,7 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 
 gem "devise"
+gem "ransack"
 
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
@@ -82,4 +83,3 @@ end
 
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
-
