@@ -1,31 +1,30 @@
 <div class="containerProfile">
 
-  <div class="profile-button">
+  <div class="profile-title">
     <h1>Bienvenue <%= current_user.first_name %> <%= current_user.last_name %></h1>
-    <h2><%= link_to "Mes voitures", profile_owner_path %></h2>
+    <h2><%= link_to "Mes voitures", profile_owner_path, class: "profile-button" %></h2>
   </div>
 
-  <h2>Mes réservervations :</h2>
+  <h2>Mes réservations :</h2>
 
 
       <% current_user.bookings.each do |booking| %>
         <div class='card-profile'>
-          <%= cl_image_tag booking.car.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag booking.car.photo.key %>
           <div class="card-profile-infos">
-            <div>
-              <div>
-                <h2><%= booking.car.brand %></h2>
-                <h3><%= booking.car.model %></h3>
-              </div>
-              <div>
-                <p><%= booking.date %></p>
-              </div>
-              <p><%= booking.car.description %></p>
-            </div>
-            <p class="card-profile-pricing"><%= booking.car.price_per_day %> €/jour</p>
-            <div>
-            <%= link_to "supprimer", booking_path(booking),
-              data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"} %>
+            <ul class="card-profile-tete">
+              <li><%= booking.car.brand %>
+              <%= booking.car.model %></li>
+              <li><%= booking.date %></li>
+            </ul>
+            <ul class="card-profile-price">
+              <li><strong><%= booking.car.price_per_day %></strong>€/jour</li>
+              <li><%= booking.car.description %></li>
+            </ul>
+            <div class="card-profile-end">
+              <%= link_to "supprimer", booking_path(booking),
+              data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"},
+              class: "card-profile-delete" %>
             </div>
           </div>
         </div>

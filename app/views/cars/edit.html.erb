@@ -3,6 +3,7 @@
 <div class="classe">
   <%= simple_form_for(@car) do |f| %>
     <%= f.text_field :brand, placeholder: 'marque de la voiture', class: "toto"%>
+    <%= f.text_field :model, placeholder: 'Modèle de la voiture', class: "toto"%> %>
     <%= f.text_field :year, placeholder: "l'année du véhicule", class: "toto"%>
     <%= f.text_field :price_per_day, placeholder: 'prix par jour', class: "toto"%>
     <%= f.text_field :color, placeholder: 'couleur', class: "toto"%>
