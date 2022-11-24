@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :cars do
-    resources :bookings, only: [:create, :new]
+    resources :bookings, only: %i[create new update edit]
   end
+  resources :bookings, only: %i[destroy]
 end
