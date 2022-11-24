@@ -1,13 +1,22 @@
 class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_car, only: %i[show edit update destroy]
+
   def index
     @cars = Car.all
     @q = Car.ransack(params[:q])
-    # @cars = @q.result(distinct: true)
     return unless params[:brand]
 
-    @cars = @cars.where(brand: params[:brand])
+    @cars_search = @cars.where(brand: params[:brand])
+    @cars_search = @q.result(distinct: true)
+    @cars_map = Car.all
+    @markers = @cars_map.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude
+        # image_url: helpers.asset_url("log.png")
+      }
+    end
   end
 
   def show

@@ -1,19 +1,19 @@
+<div class="profile-title">
+  <h1>Bienvenue <%= current_user.first_name %> <%= current_user.last_name %></h1>
+  <h2><%= link_to "Mes réservations", profile_path, class: "profile-button" %></h2>
+</div>
+
 <div class="containerProfile">
 
-  <div class="profile-button">
-    <h1>Bienvenue <%= current_user.first_name %> <%= current_user.last_name %></h1>
-    <h2><%= link_to "Mes réservations", profile_path %></h2>
-  </div>
-
-  <h2>Mes voitures :</h2>
+  <h2><strong>Mes voitures :</strong></h2>
 
   <div class="main-container">
     <div class="cards">
       <% current_user.cars.each do |car| %>
         <%= link_to edit_car_path(car), class: 'card-trip' do %>
-            <% if car.photo.present? %>
-          <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-          <% end  %>
+          <% if car.photo.present? %>
+            <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= car.brand %></h2>
