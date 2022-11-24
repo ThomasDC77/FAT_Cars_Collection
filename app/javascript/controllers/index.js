@@ -9,3 +9,9 @@ application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import RefreshListController from "./refresh_list_controller"
+application.register("refresh-list", RefreshListController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
