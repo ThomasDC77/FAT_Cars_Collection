@@ -10,9 +10,9 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
-      redirect_to cars_path(@car)
+      redirect_to profile_path
     else
-      render new_car_booking_path, status: :unprocessable_entity
+      redirect_to cars_path(@car), status: :unprocessable_entity
     end
   end
 
