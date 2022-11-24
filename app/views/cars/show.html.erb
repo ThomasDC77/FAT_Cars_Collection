@@ -1,19 +1,19 @@
-<h1>Voici la <%= @car.brand %></h1>
-<div class="containerProfile">
+
+<div class="containerProfile" >
   <div class="card-show">
-    <% if @car.photo.present? %>
-      <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+    <h1>Voici la <%= @car.brand %></h1>
+    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-show-infos">
       <div>
         <h2><%= @car.brand %></h2>
-        <p><%= @car.description %></p>
+        <h3><%= @car.model %></h3>
       </div>
       <h2 class="card-show-pricing"><%= @car.price_per_day %> €/jour</h2>
     </div>
     <%= simple_form_for ([@car, @booking]), data: { controller: 'flatpickr' }  do |f| %>
-      <%= f.input :date, as: :string, input_html: {
+    <%= f.input :date, as: :string, input_html: {
         data: { flatpickr_target: "date" } } %>
       <button class="btn">Réserver</button>
     <% end %>
   </div>
+</div>
