@@ -1,14 +1,12 @@
 .background{
   background-image: url("http://image.noelshack.com/fichiers/2022/47/2/1669127659-backgroundimg.jpg");
   width: 100%;
-  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  position: fixed;
-  z-index: -1;
   padding-top: 3%;
-  padding-bottom: 3%;
+  padding-bottom: 10rem;
+  flex-grow: 1;
 }
 
 .container{
@@ -31,4 +29,3 @@
 .center_content{
   text-align: center;
 }
-
