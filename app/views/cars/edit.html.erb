@@ -1,5 +1,6 @@
-<%= @car.brand %>
+<p>Modifie ici les caractéristiques de ta voiture</p>
 
+<<<<<<< HEAD
 <%= simple_form_for(@car) do |f| %>
   <%= f.text_field :brand, placeholder: 'marque de la voiture' %>
   <%= f.text_field :model, placeholder: 'Modèle de la voiture' %>
@@ -13,6 +14,25 @@
   <%= f.text_field :city, placeholder: 'ville' %>
   <%= f.button :submit %>
 <% end %>
+=======
+<div class="classe">
+  <%= simple_form_for(@car) do |f| %>
+    <%= f.text_field :brand, placeholder: 'marque de la voiture', class: "toto"%>
+    <%= f.text_field :year, placeholder: "l'année du véhicule", class: "toto"%>
+    <%= f.text_field :price_per_day, placeholder: 'prix par jour', class: "toto"%>
+    <%= f.text_field :color, placeholder: 'couleur', class: "toto"%>
+    <%= f.text_field :description, placeholder: 'déscription', class: "toto"%>
+    <%= f.text_field :number_street, placeholder: 'numéro de rue', class: "toto"%>
+    <%= f.text_field :name_street, placeholder: 'nom de rue', class: "toto"%>
+    <%= f.text_field :post_code, placeholder: 'code postal', class: "toto"%>
+    <%= f.text_field :city, placeholder: 'ville', class: "toto"%>
+    <%= f.button :submit, class: "button-submit"%>
+  <% end %>
+</div>
+>>>>>>> 76affaf0db51cf1091f9a0998dadb663ffcea47a
 
-<%= link_to "supprimer", car_path(@car),
-data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"} %>
+
+<div class="lien">
+<%= link_to "Supprimer", car_path(@car),
+data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"}, class: "supprimer-bouton"%>
+</div>

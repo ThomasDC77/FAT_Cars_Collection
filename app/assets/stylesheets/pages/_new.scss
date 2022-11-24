@@ -1,5 +1,4 @@
 .backgroundShow{
-  position: static;
   background-image: url("http://image.noelshack.com/fichiers/2022/47/2/1669127659-backgroundimg.jpg");
   width: 100%;
   height: 100%;
@@ -13,107 +12,28 @@
 
 .containerShow{
   font-family: $racing-font;
-  background-color: #fff;
+  background-color:whitesmoke;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 150px;
-  margin: 250px;
-  opacity: 0.9;
+  padding: 100px;
+  margin: 0 auto;
   box-shadow: 0 0 10px #000;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   padding-top: 50px;
-  h1{
+  padding-bottom: 100px;
+  h1, h2 {
     font-family: $racing-font;
   }
+
   h2{
-    font-family: $racing-font;
-    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
 .center_contentShow{
   text-align: center;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(.9);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.705);
-  }
-    100% {
-    transform: scale(.9);
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.705);
-  }
-}
-
-@keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
-}
-
-.btnallall{
-  width: 220px;
-  height: 80px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background: black;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: bold;
-  margin-top: 5%;
-  padding: 0.8em;
-  font-size: x-large;
-  animation: pulse 1s infinite;
-}
-
-.btnall:hover {
-  border: none;
-  outline: none;
-  color: whitesmoke;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-}
-
-.btnall:hover:before {
-  content: '';
-  background: linear-gradient(45deg, #504f4f, #948f8c, #3a3a32, #535850, #818584, #343435, #59575a, #646264, #757373);
-  position: absolute;
-  top: -2px;
-  left:-2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-}
-
-.btnall:hover:active:after {
-  background: transparent;
-}
-
-.btnall:hover:hover:before {
-  opacity: 1;
-}
-
-.btnall:hover:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
 }
