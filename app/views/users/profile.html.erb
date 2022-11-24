@@ -7,21 +7,27 @@
 
   <h2>Mes réservervations :</h2>
 
-  <div class="main-container">
-    <div class="cards">
+
       <% current_user.bookings.each do |booking| %>
-        <div class='card-trip'>
+        <div class='card-profile'>
           <%= cl_image_tag booking.car.photo.key, height: 300, width: 400, crop: :fill %>
-          <div class="card-trip-infos">
+          <div class="card-profile-infos">
             <div>
-              <h2><%= booking.car.brand %></h2>
+              <div>
+                <h2><%= booking.car.brand %></h2>
+                <h3><%= booking.car.model %></h3>
+              </div>
+              <div>
+                <p><%= booking.date %></p>
+              </div>
               <p><%= booking.car.description %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= booking.car.price_per_day %> €/jour</h2>
+            <p class="card-profile-pricing"><%= booking.car.price_per_day %> €/jour</p>
+            <div>
+            <%= link_to "supprimer", booking_path(booking),
+              data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"} %>
+            </div>
           </div>
         </div>
       <% end %>
-    </div>
-  </div>
-
 </div>

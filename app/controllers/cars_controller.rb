@@ -34,17 +34,18 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    if @car.destroy
-      redirect_to profile_owner_path(@car)
+    if @car.bookings.present?
+      redirect_to car_path(@car), status: :unprocessable_entity
     else
-      render 'profile/owner', status: :unprocessable_entity
+      @car.destroy
+      redirect_to profile_owner_path(@car)
     end
   end
 
   private
 
   def car_params
-    params.require(:car).permit(:brand, :year, :price_per_day, :color, :number_street, :name_street, :post_code, :description, :city, :photo)
+    params.require(:car).permit(:brand, :model, :year, :price_per_day, :color, :number_street, :name_street, :post_code, :description, :city, :photo)
   end
 
   def set_car

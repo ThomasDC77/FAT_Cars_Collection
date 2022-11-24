@@ -7,6 +7,7 @@
         <h2>Crée ton annonce !</h2>
         <%= simple_form_for(@car) do |f| %>
         <%= f.input :brand, label: "Marque", placeholder: 'Marque de la voiture' %>
+        <%= f.input :model, label: "modèle", placeholder: 'Modèle de la voiture' %>
         <%= f.input :year, label: "Année", placeholder: "L'année du véhicule" %>
         <%= f.input :price_per_day, label: "Prix par jour", placeholder: 'Prix par jour' %>
         <%= f.input :color, label:"Couleur", placeholder: 'Couleur' %>

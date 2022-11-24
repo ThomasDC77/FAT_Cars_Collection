@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: %i[destroy edit update]
   def new
     @booking = Booking.new
   end
@@ -11,13 +12,30 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to cars_path(@car)
     else
-      render :new, status: :unprocessable_entity
+      render new_car_booking_path, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to profile_path
+  end
+
+  def edit
+  end
+
+  def update
+    @booking.update(booking_params)
+    redirect_to profile_path
   end
 
   private
 
   def booking_params
     params.require(:booking).permit(:date)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end

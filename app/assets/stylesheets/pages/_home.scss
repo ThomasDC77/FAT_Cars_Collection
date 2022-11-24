@@ -52,7 +52,7 @@
   100% { background-position: 0 0; }
 }
 
-.btn{
+.home-button{
   width: 220px;
   height: 80px;
   flex-direction: row;
@@ -68,7 +68,7 @@
   animation: pulse 1s infinite;
 }
 
-.btn:hover {
+.home-button:hover {
   border: none;
   outline: none;
   color: whitesmoke;
@@ -78,7 +78,7 @@
   border-radius: 10px;
 }
 
-.btn:hover:before {
+.home-button:hover:before {
   content: '';
   background: linear-gradient(45deg, #504f4f, #948f8c, #3a3a32, #535850, #818584, #343435, #59575a, #646264, #757373);
   position: absolute;
@@ -95,15 +95,15 @@
   border-radius: 10px;
 }
 
-.btn:hover:active:after {
+.home-button:hover:active:after {
   background: transparent;
 }
 
-.btn:hover:hover:before {
+.home-button:hover:hover:before {
   opacity: 1;
 }
 
-.btn:hover:after {
+.home-button:hover:after {
   z-index: -1;
   content: '';
   position: absolute;

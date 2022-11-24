@@ -1,11 +1,8 @@
 <h1>Voici toutes les offres</h1>
-
+<div class="containerProfile">
 <%= search_form_for @q do |f| %>
-
-  # Search if the name field contains...
-  <%= f.label :brand_start %>
+  <%= f.label "rechercher votre marque" %>
   <%= f.search_field :brand_start %>
-
   <%= f.submit %>
 <% end %>
 
@@ -24,4 +21,5 @@
       <% end %>
     <% end %>
   </div>
+</div>
 </div>
