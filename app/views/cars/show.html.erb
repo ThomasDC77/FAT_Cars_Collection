@@ -12,7 +12,7 @@
     <%= simple_form_for ([@car, @booking]), data: { controller: 'flatpickr' }  do |f| %>
       <%= f.input :date, as: :string, input_html: {
         data: { flatpickr_target: "date" } } %>
+      <button class="btn">Réserver</button>
+    <% end %>
   </div>
-          <button class="btn">Ajouter</button>
-      <% end %>
 </div>
