@@ -3,36 +3,32 @@ h1{
 }
 
 .card-show{
-  background-color: #fff;
+  background-color:whitesmoke;
   border: 1px solid #ccc;
   border-radius: 6px;
+  text-align: center;
   padding: 100px;
   margin: 0 auto;
-  opacity: 0.8;
   box-shadow: 0 0 10px #000;
   margin-top: 3%;
   padding-top: 50px;
   padding-bottom: 100px;
-  h1, h2 {
+  h1, h2, h3{
     font-family: $racing-font;
+    padding-bottom: 20px;
   }
 }
 
-.card-show-infos {
+.card-show-infos{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   width: 100%;
   height: 100%;
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+
   .card-show-infos-price {
     font-size: 1.5rem;
     font-weight: bold;
