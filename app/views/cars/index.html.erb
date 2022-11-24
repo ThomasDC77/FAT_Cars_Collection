@@ -1,5 +1,6 @@
 <h1>Voici toutes les offres</h1>
 <div class="containerProfile">
+
 <%= search_form_for @q do |f| %>
   <%= f.label "rechercher votre marque" %>
   <%= f.search_field :brand_start %>
@@ -10,7 +11,9 @@
   <div class="cards">
     <% @cars.each do |car| %>
       <%= link_to car_path(car), class: 'card-trip' do %>
-        <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+        <% if car.photo.present? %>
+          <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= car.brand %></h2>
