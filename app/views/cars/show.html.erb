@@ -12,8 +12,8 @@
       <h2 class="card-show-pricing"><%= @car.price_per_day %> €/jour</h2>
     </div>
     <%= simple_form_for ([@car, @booking]), data: { controller: 'flatpickr', flatpickr_dates_value: @dates }  do |f| %>
-    <%= f.input :date, as: :string, input_html: {
-        data: { flatpickr_target: "date" } } %>
+      <%= f.input :date, as: :string, input_html: {
+          data: { flatpickr_target: "date" } } %>
       <button class="btn">Réserver</button>
     <% end %>
   </div>
