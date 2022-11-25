@@ -5,7 +5,7 @@
     <%= f.text_field :brand, label: "Marque", placeholder: 'Ex : Porshe', class: "fieldsEdit"%>
     <%= f.text_field :model, label: "Modèle", placeholder: 'Ex: Spider', class: "fieldsEdit"%>
     <%= f.text_field :year, label: "Année", placeholder: "Ex: 2018", class: "fieldsEdit"%>
-    <%# <%= f.text_field :origin, label: "Origine", placeholder: 'Ex: Française', class: "fieldsEdit"%>
+    <%= f.select :origin, ["Française", "Japonaise", "Italienne", "Allemande", "Américaine"], label: "Origine", placeholder: 'Ex: Française', class: "fieldsEdit"%>
     <%= f.text_field :price_per_day, label:"Prix par jour",  placeholder: 'Ex: €150/j', class: "fieldsEdit"%>
     <%= f.text_field :color, label:"Couleur", placeholder: 'Ex: Noir', class: "fieldsEdit"%>
     <%= f.text_field :description, label:"Description", placeholder: 'Ex: Véloce', class: "fieldsEdit"%>
