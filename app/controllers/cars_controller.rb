@@ -9,6 +9,7 @@ class CarsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @dates = @car.bookings.map(&:date)
   end
 
   def new
