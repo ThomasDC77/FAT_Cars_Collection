@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CarsController from "./cars_controller"
+application.register("cars", CarsController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
@@ -15,3 +18,6 @@ application.register("refresh-list", RefreshListController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
