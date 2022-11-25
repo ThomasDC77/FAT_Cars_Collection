@@ -17,6 +17,11 @@
       <% end %>
     <% end %>
 </div>
+<%#
+  <%= form_with url: "/cars", method: :get do |f|
+    <%= f.select :brand, ["Ferrari", "Lamborghini"]
+    <%= f.submit
+  <% end  %>
 
 <div class="main-container">
   <div class="cards">
@@ -28,7 +33,7 @@
         <div class="card-trip-infos">
           <div>
             <h2><%= car.brand %></h2>
-            <p><%= car.description %></p>
+            <p><%= car.model %></p>
           </div>
           <h2 class="card-trip-pricing"><%= car.price_per_day %> €/jour</h2>
         </div>

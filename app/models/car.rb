@@ -4,7 +4,7 @@ class Car < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
-  BRANDS = %w[Ferrari Lamborghini]
+  BRANDS = %w[Ferrari Lamborghini Alpine]
 
   validates :brand, inclusion: { in: BRANDS }
 
