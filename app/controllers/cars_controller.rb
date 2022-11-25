@@ -4,7 +4,10 @@ class CarsController < ApplicationController
   def index
     @cars = Car.all
     @q = Car.ransack(params[:q])
-    @cars = @q.result(distinct: true)
+    # @cars = @q.result(distinct: true)
+    return unless params[:brand]
+
+    @cars = @cars.where(brand: params[:brand])
   end
 
   def show

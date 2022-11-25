@@ -31,6 +31,10 @@ h1 {
   }
 }
 
+.containerProfile{
+  width: 80%;
+  height: 100vh;
+}
 
 .card-trip:hover {
   box-shadow: 0 0px 40px rgba(0, 0, 0, 0.8);
@@ -66,4 +70,17 @@ h1 {
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+.selector{
+  text-decoration: none;
+  color: black;
+  padding-left: 30px;
+}
+
+.all-selector{
+  display: flex;
+  margin: 30px;
+  text-align: center;
 }
