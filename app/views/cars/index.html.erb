@@ -1,11 +1,22 @@
 <h1>Voici toutes les offres</h1>
 <div class="containerProfile">
 
-<%= search_form_for @q do |f| %>
-  <%= f.label "rechercher votre marque" %>
-  <%= f.search_field :brand_start %>
-  <%= f.submit %>
-<% end %>
+
+<div class="all-selector">
+    <%= search_form_for @q do |f| %>
+      <%= f.label "rechercher votre marque" %>
+        <%= f.search_field :brand_or_model_start %>
+      <%= f.submit %>
+    <% end %>
+
+    <% Car.brands.each do |brand| %>
+      <% if params[:brand] == brand %>
+        <%= link_to brand, request.params.except(:brand), class: "selector"%>
+      <% else %>
+        <%= link_to brand, request.params.merge(brand: brand), class: "selector" %>
+      <% end %>
+    <% end %>
+</div>
 
 <div class="main-container">
   <div class="cards">
