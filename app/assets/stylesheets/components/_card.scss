@@ -32,8 +32,9 @@ h1 {
 }
 
 .containerProfile{
-  width: 80%;
-  height: 100vh;
+ margin: 0 auto;
+ width: 80%;
+ height: 100vh;
 }
 
 .card-trip:hover {
@@ -82,5 +83,4 @@ h1 {
 .all-selector{
   display: flex;
   margin: 30px;
-  text-align: center;
 }
