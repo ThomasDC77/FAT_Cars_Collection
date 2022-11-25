@@ -1,23 +1,20 @@
 <p>Modifie ici les caractéristiques de ta voiture</p>
 
-<div class="classe">
+<div class="containerEdit">
   <%= simple_form_for(@car) do |f| %>
-    <%= f.text_field :brand, placeholder: 'marque de la voiture', class: "toto"%>
-    <%= f.text_field :model, placeholder: 'Modèle de la voiture', class: "toto"%> %>
-    <%= f.text_field :year, placeholder: "l'année du véhicule", class: "toto"%>
-    <%= f.text_field :price_per_day, placeholder: 'prix par jour', class: "toto"%>
-    <%= f.text_field :color, placeholder: 'couleur', class: "toto"%>
-    <%= f.text_field :description, placeholder: 'déscription', class: "toto"%>
-    <%= f.text_field :number_street, placeholder: 'numéro de rue', class: "toto"%>
-    <%= f.text_field :name_street, placeholder: 'nom de rue', class: "toto"%>
-    <%= f.text_field :post_code, placeholder: 'code postal', class: "toto"%>
-    <%= f.text_field :city, placeholder: 'ville', class: "toto"%>
-    <%= f.button :submit, class: "button-submit"%>
+    <%= f.text_field :brand, label: "Marque", placeholder: 'Ex : Porshe', class: "fieldsEdit"%>
+    <%= f.text_field :model, label: "Modèle", placeholder: 'Ex: Spider', class: "fieldsEdit"%>
+    <%= f.text_field :year, label: "Année", placeholder: "Ex: 2018", class: "fieldsEdit"%>
+    <%= f.select :origin, ["Française", "Japonaise", "Italienne", "Allemande", "Américaine"], label: "Origine", placeholder: 'Ex: Française', class: "fieldsEdit"%>
+    <%= f.text_field :price_per_day, label:"Prix par jour",  placeholder: 'Ex: €150/j', class: "fieldsEdit"%>
+    <%= f.text_field :color, label:"Couleur", placeholder: 'Ex: Noir', class: "fieldsEdit"%>
+    <%= f.text_field :description, label:"Description", placeholder: 'Ex: Véloce', class: "fieldsEdit"%>
+    <%= f.text_field :number_street, label:"Numéro de la rue", placeholder: 'Ex: 1 rue des Capucins', class: "fieldsEdit"%>
+    <%= f.text_field :name_street, label:"Nom de la rue", placeholder: 'Ex: Rue des Capucins', class: "fieldsEdit"%>
+    <%= f.text_field :post_code, label:"Code Postale", placeholder: 'Ex: 69001', class: "fieldsEdit"%>
+    <%= f.text_field :city, label:"Couleur", placeholder: 'Ex: Lyon', class: "fieldsEdit"%>
+    <button class="btn">Mettre à jour</button>
+    <%= link_to "Supprimer", car_path(@car),
+      data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"}, class: "btn"%>
   <% end %>
-</div>
-
-
-<div class="lien">
-<%= link_to "Supprimer", car_path(@car),
-data: {turbo_method: :delete, turbo_confirm: "Es-tu sur ?"}, class: "supprimer-bouton"%>
 </div>
