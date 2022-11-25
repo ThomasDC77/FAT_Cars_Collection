@@ -1,0 +1,21 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+
+    <div class="all-selector">
+        <%= search_form_for @q do |f| %>
+          <%= f.label "rechercher votre marque" %>
+            <%= f.search_field :brand_or_model_start %>
+          <%= f.submit %>
+        <% end %>
+
+        <% Car::ORIGINS.each do |origin| %>
+          <% if params[:origin] == origin %>
+            <%= link_to origin, request.params.except(:origin), class: "selector"%>
+          <% else %>
+            <%= link_to origin, request.params.merge(origin: origin), class: "selector" %>
+          <% end %>
+        <% end %>
+    </div>
+
+  </div>
+</div>

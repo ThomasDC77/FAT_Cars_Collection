@@ -1,35 +1,8 @@
+<%= render 'shared/navbar_index' %>
+<%= notice %>
+<%= alert %>
+
 <div class="main-container" data-controller="cars">
-<div style="width: 100%; height: 500px;"
-  data-controller="map"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-map-markers-value="<%= @markers.to_json %>">
-</div>
-
-<div class="containerProfile">
-
-
-<div class="all-selector">
-    <%= search_form_for @q do |f| %>
-      <%= f.label "rechercher votre marque" %>
-        <%= f.search_field :brand_or_model_start %>
-      <%= f.submit %>
-    <% end %>
-
-    <% Car.brands.each do |brand| %>
-      <% if params[:brand] == brand %>
-        <%= link_to brand, request.params.except(:brand), class: "selector"%>
-      <% else %>
-        <%= link_to brand, request.params.merge(brand: brand), class: "selector" %>
-      <% end %>
-    <% end %>
-</div>
-<%#
-  <%= form_with url: "/cars", method: :get do |f|
-    <%= f.select :brand, ["Ferrari", "Lamborghini"]
-    <%= f.submit
-  <% end  %>
-
-<div class="main-container">
   <div class="cards">
     <% @cars.each do |car| %>
       <%= link_to car_path(car), class: 'card-trip', data: {action: 'mouseenter->cars#onCard', id: car.id} do %>
@@ -46,12 +19,13 @@
       <% end %>
     <% end %>
   </div>
+
   <div class="index-map">
     <div style="width: 100%; height: 100vh;"
       data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-      data-action="truc->map#toto"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-action="point->map#popup"
       data-cars-target="map">
     </div>
   </div>
