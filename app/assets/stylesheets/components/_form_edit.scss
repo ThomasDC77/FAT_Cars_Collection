@@ -2,17 +2,19 @@ p{
   margin: 30px 0px -20px 30px;
   text-align: center;
   font-size: 25px;
+  font-family: $racing-font;
 }
 
-.classe{
+.containerEdit{
   margin: 100px 50px 50px 50px;
   padding: 30px;
-  background-color: black;
+  background-color: lightgrey;
   border-radius: 20px;
   text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-.toto{
+.fieldEdit{
   border-radius: 10px;
   margin: 10px;
   padding-left: 10px;

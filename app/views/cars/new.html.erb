@@ -6,16 +6,16 @@
         <h1>Ajoutez une voiture de collection et partagez la avec la communauté !</h1>
         <h2>Crée ton annonce !</h2>
         <%= simple_form_for(@car) do |f| %>
-          <%= f.input :brand, label: "Marque", placeholder: 'Marque de la voiture' %>
-          <%= f.input :model, label: "Modèle", placeholder: 'Modèle de la voiture' %>
-          <%= f.input :year, label: "Année", placeholder: "L'année du véhicule" %>
-          <%= f.input :price_per_day, label: "Prix par jour", placeholder: 'Prix par jour' %>
-          <%= f.input :color, label:"Couleur", placeholder: 'Couleur' %>
-          <%= f.input :description, label:"Description", placeholder: 'Description' %>
-          <%= f.input :number_street, label:"Numéro de la rue", placeholder: 'Numéro de la rue' %>
-          <%= f.input :name_street, label:"Nom de la rue", placeholder: 'Nom de la rue' %>
-          <%= f.input :post_code, label:"Code Postale", placeholder: 'Code postale' %>
-          <%= f.input :city, label:"Couleur", placeholder: 'Ville' %>
+          <%= f.input :brand, label: "Marque", placeholder: 'Ex: Porshe' %>
+          <%= f.input :model, label: "Modèle", placeholder: 'Ex: Spider' %>
+          <%= f.input :year, label: "Année", placeholder: "Ex: 2018" %>
+          <%= f.input :price_per_day, label: "Prix par jour", placeholder: 'Ex: €150/j' %>
+          <%= f.input :color, label:"Couleur", placeholder: 'Ex: Noir' %>
+          <%= f.input :description, label:"Description", placeholder: 'Ex: Véloce' %>
+          <%= f.input :number_street, label:"Numéro de la rue", placeholder: 'Ex: 1 rue des Capucins' %>
+          <%= f.input :name_street, label:"Nom de la rue", placeholder: 'Ex: Rue des Capucins' %>
+          <%= f.input :post_code, label:"Code Postale", placeholder: 'Ex: 69001' %>
+          <%= f.input :city, label:"Couleur", placeholder: 'Ex: Lyon' %>
           <%= f.input :photo, as: :file %>
           <button class="btn">Ajouter</button>
         <% end %>
