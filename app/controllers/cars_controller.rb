@@ -3,14 +3,11 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[show edit update destroy]
 
   def index
-    @cars = Car.all
-    @q = Car.ransack(params[:q])
-    return unless params[:brand]
+    @cars = params[:origin].present? ? Car.where(origin: params[:origin]) : Car.all
+    @q = @cars.ransack(params[:q])
+    @cars = @q.result(distinct: true)
 
-    @cars_search = @cars.where(brand: params[:brand])
-    @cars_search = @q.result(distinct: true)
-    @cars_map = Car.all
-    @markers = @cars_map.geocoded.map do |car|
+    @markers = @cars.geocoded.map do |car|
       {
         id: car.id.to_s,
         lat: car.latitude,
@@ -35,7 +32,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to cars_path(@car)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -59,7 +56,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :price_per_day, :color, :number_street, :name_street, :post_code, :description, :city, :photo)
+    params.require(:car).permit(:brand, :origin, :model, :year, :price_per_day, :color, :number_street, :name_street, :post_code, :description, :city, :photo)
   end
 
   def set_car

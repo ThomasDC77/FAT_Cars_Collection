@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['map']
 
   onCard(e) {
-    const event = new CustomEvent('truc', { detail: e.target.dataset.id });
+    const event = new CustomEvent('point', { detail: e.target.dataset.id });
     this.mapTarget.dispatchEvent(event)
   }
 }

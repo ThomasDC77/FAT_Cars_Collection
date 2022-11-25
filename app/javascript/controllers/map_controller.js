@@ -6,6 +6,10 @@ export default class extends Controller {
     markers: Array
   }
 
+  connect() {
+    console.log('toto')
+  }
+
   closePopup(marker) {
     const p = marker.getPopup()
     if (p.isOpen())
@@ -18,7 +22,7 @@ export default class extends Controller {
       marker.togglePopup()
   }
 
-  toto(event) {
+  popup(event) {
     const marker = this.markers.find((m) => m.id === event.detail)
     this.markers.forEach(m => this.closePopup(m))
     this.openPopup(marker)

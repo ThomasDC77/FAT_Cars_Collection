@@ -8,6 +8,7 @@
         <%= simple_form_for(@car) do |f| %>
           <%= f.input :brand, label: "Marque", placeholder: 'Ex: Porshe' %>
           <%= f.input :model, label: "Modèle", placeholder: 'Ex: Spider' %>
+          <%= f.input :origin,label: "Origine", collection: Car::ORIGINS %>
           <%= f.input :year, label: "Année", placeholder: "Ex: 2018" %>
           <%= f.input :price_per_day, label: "Prix par jour", placeholder: 'Ex: €150/j' %>
           <%= f.input :color, label:"Couleur", placeholder: 'Ex: Noir' %>
