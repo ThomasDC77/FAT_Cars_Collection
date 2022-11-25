@@ -1,8 +1,7 @@
-
 <div class="containerProfile" >
   <div class="card-show">
     <h1>Voici la <%= @car.brand %></h1>
-    <% if car.photo.present? %>
+    <% if @car.photo.present? %>
       <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
     <div class="card-show-infos">

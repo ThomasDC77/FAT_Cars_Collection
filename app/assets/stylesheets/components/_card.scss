@@ -5,8 +5,8 @@ h1 {
 }
 
 .main-container {
-  flex-wrap: wrap;
-  margin: 80px 0;
+  display: flex;
+  margin: 0;
 }
 
 .cards {
@@ -35,6 +35,13 @@ h1 {
  margin: 0 auto;
  width: 80%;
  height: 100vh;
+}
+
+.index-map {
+  width: 600px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .card-trip:hover {
