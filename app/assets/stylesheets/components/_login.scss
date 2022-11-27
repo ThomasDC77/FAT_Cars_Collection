@@ -1,0 +1,31 @@
+h2{
+  font-size: 40px;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.login-container{
+  margin-left: 250px;
+  width: 70%;
+  margin-top: 50px;
+}
+
+.form-inputs{
+  text-align: center;
+  font-size: 25px;
+}
+
+.buttons-submit{
+  display: flex;
+  margin: 40px;
+  justify-content: space-between;
+}
+
+.login-buttons{
+  padding: 25px;
+  background-color: black;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 220px;
+  height: 80px;
+}

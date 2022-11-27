@@ -1,7 +1,9 @@
+//ici css de la page des offres de voitures
+
 h1 {
   font-size: 40px;
   font-weight: bold;
-  text-align: center;
+  // text-align: center;
 }
 
 .main-container {
@@ -34,7 +36,7 @@ h1 {
 .containerProfile{
  margin: 0 auto;
  width: 80%;
- padding-bottom: 80px;
+//  padding-bottom: 80px;
 }
 
 .index-map {
@@ -53,14 +55,15 @@ h1 {
 
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
+  padding-left: -10px;
   margin: 0;
 }
 
